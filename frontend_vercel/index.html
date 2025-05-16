@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronóstico Clima Jauja - Huancayo</title>
+    <!-- CSS de Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .hero-section {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Jauja_panorama.jpg/1280px-Jauja_panorama.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .btn-primary {
+        background-color: #0d6efd;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+      .btn-primary:hover {
+        background-color: #0b5ed7;
+      }
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #0d6efd;
+      }
+      footer {
+        background-color: #343a40;
+        color: white;
+        padding: 2rem 0;
+      }
+      .iframe-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        min-height: 600px; /* Mínima altura para asegurar visibilidad */
+      }
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">
+          Pronóstico del Clima para Jauja-Huancayo
+        </h1>
+        <p class="lead">
+          Una herramienta de predicción meteorológica basada en aprendizaje
+          automático
+        </p>
+        <a href="#demo" class="btn btn-light btn-lg">Ver Predicción</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- About Section -->
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="mb-4">Sobre esta herramienta</h2>
+            <p class="lead">
+              Esta aplicación utiliza un modelo de aprendizaje automático
+              (Random Forest) entrenado con datos históricos del clima de la
+              región Jauja-Huancayo para predecir la temperatura máxima de
+              cualquier día futuro.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="mb-5">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <div class="card p-4">
+              <div class="feature-icon">🌡️</div>
+              <h3>Precisión</h3>
+              <p>
+                Modelo entrenado con años de datos históricos de temperatura de
+                la región.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4">
+              <div class="feature-icon">🕒</div>
+              <h3>Rápido</h3>
+              <p>
+                Obtén predicciones instantáneas para cualquier fecha futura.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card p-4">
+              <div class="feature-icon">📱</div>
+              <h3>Accesible</h3>
+              <p>
+                Interfaz fácil de usar, accesible desde cualquier dispositivo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Section -->
+      <section id="demo" class="mb-5">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2 class="text-center mb-4">Prueba el Modelo</h2>
+            <div class="iframe-container">
+              <!-- AQUÍ VA LA URL DE TU ESPACIO DE HUGGING FACE -->
+              <iframe
+                src="https://huggingface.co/spaces/michxlmgg/prediccion-clima-jauja"
+                title="Pronóstico Clima Jauja"
+                allow="accelerometer; camera; microphone; clipboard-write; autoplay"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+            <div class="text-center mt-3">
+              <p class="text-muted">
+                <small
+                  >Aplicación alojada en Hugging Face Spaces. Si no se carga,
+                  <a
+                    href="https://huggingface.co/spaces/michxlmgg/prediccion-clima-jauja"
+                    target="_blank"
+                  >
+                    visita directamente la aplicación
+                  </a>
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it Works Section -->
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-center mb-4">Cómo Funciona</h2>
+            <div class="card p-4">
+              <ol class="lead">
+                <li>
+                  Selecciona la fecha para la que deseas obtener la predicción
+                </li>
+                <li>
+                  Ingresa la temperatura máxima, mínima y precipitación del día
+                  anterior
+                </li>
+                <li>Haz clic en "Obtener Pronóstico" para ver el resultado</li>
+              </ol>
+              <p>
+                El modelo utiliza características temporales (día de la semana,
+                mes, etc.) y los valores del día anterior para generar una
+                predicción precisa de la temperatura máxima.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="container">
+        <p>
+          Desarrollado por <br />
+          -Cordova Caballero Victor
+          <br />
+          -Gaspar Almonacid Yhefry
+          <br />
+          -Cabello Angel Jairo
+        </p>
+        <p>
+          <a
+            href="https://github.com/michxlmg/prediccion-clima-jauja"
+            class="text-white text-decoration-none me-3"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://huggingface.co/spaces/michxlmgg/prediccion-clima-jauja"
+            class="text-white text-decoration-none"
+          >
+            Hugging Face
+          </a>
+        </p>
+        <p class="mt-3">
+          <small
+            >© 2025 Grupo 05. Todos los derechos reservados – Huancayo.</small
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
