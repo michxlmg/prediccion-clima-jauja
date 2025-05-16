@@ -1,0 +1,18 @@
+{
+  "name": "prediccion-clima-jauja-frontend",
+  "version": "1.0.0",
+  "description": "Frontend para la aplicación de pronóstico de clima para Jauja-Huancayo",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "clima",
+    "predicción",
+    "jauja",
+    "huancayo",
+    "machine-learning"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
